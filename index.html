@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FAST MRS</title>
+    <style>
+body {
+    background-image: url('p3.jpg');
+  margin: 0;
+  padding: 0;
+  background: #000;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+background-size: cover;
+}
+
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  z-index: -1;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  z-index: -1;
+}
+
+header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+
+}
+
+.history {
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 15px;
+}
+.logout {
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 15px;
+}
+
+.history button {
+background-color: transparent;
+border-radius: 15px;
+font-size: 1.5rem;
+color: #fff;
+cursor: pointer;
+margin-right: 10px;
+}
+
+.logout button {
+background-color: transparent;
+border-radius: 15px;
+font-size: 1.5rem;
+color: #fff;
+cursor: pointer;
+margin-right: 10px;
+}
+
+.centered-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 2.5rem;
+  text-align: center;
+  color: white;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 1.2rem;
+  width: 60%;
+  border: none;
+  border-radius: 5px 0 0 5px;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: #ff4141;
+  color: #fff;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button[type="submit"]:hover {
+  background-color: #ff1f1f;
+}
+
+
+select[name="search_by"] {
+  font-size: 1.2rem;
+  padding: 10px;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  background-color: #fff;
+  color: #000;
+  margin-right: -5px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.email {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.social-media {
+  display: flex;
+}
+
+.social-media a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin-right: 5px;
+}
+
+.social-media i {
+  margin-right: 35px;
+}
+
+.social-media a:last-child {
+  margin-right: 0;
+}
+
+</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  </head>
+  <body>
+    
+    <header>
+  <div class="history">
+    <form action="{{ url_for('history') }}" method="GET">
+      <button type="submit">History</button>
+    </form>
+	<form action="{{ url_for('logout') }}" method="GET">
+      <button type="submit">Log Out</button>
+    </form>
+</header>
+    <div class="centered-box">
+      <h1>FAST MRS</h1>
+      <form action="/search" method="GET">
+        <select name="search_by">
+          <option value="title">Title</option>
+          <option value="genre">Genre</option>
+          <option value="year">Year</option>
+          <option value="director">Director</option>
+        </select>
+        <input type="text" id="search" name="query" placeholder="Search for a movie">
+        <button type="submit">Search</button>
+      </form>
+    </div>
+    <footer>
+      <div class="email">contact@MRS.com</div>
+      <div class="social-media">
+        <a href="#">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </footer>
+  </body>
+</html>

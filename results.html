@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Output Page</title>
+	<style>
+		body {
+			background-image: url('p3.jpg');
+			background-size: cover;
+			background-position: center;
+		}
+		.center-box {
+			background-color: rgba(255, 255, 255, 0.80);
+			border-radius: 10px;
+			padding: 50px;
+			margin: 90px auto;
+			max-width: 600px;
+			text-align: left-side;
+		}
+		.row {
+			display: flex;
+			align-items: center;
+			margin: 10px 0;
+			justify-content: space-between;
+			flex: 1;
+		}
+		.button {
+			background-color: red;
+			color: white;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-left: 5px;
+			margin-right: 0;
+		}
+		.text {
+			text-align: left;
+			margin-right: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="center-box">
+	{% if message %}
+			<h1>{{ message }}</h1>
+	{% endif %}
+		<div class="row">
+			<span class="text">{{ recommendations[0] }}</span>
+			<span class="button-container">
+				<a href="https://www.youtube.com/results?search_query={{ R[0] }}+ trailer"><button class="button">Trailer</button></a>
+				<a href="https://www.imdb.com/find/?q={{ moreInfo[0] }}"><button class="button">More Info</button></a>
+			</span>
+		</div>
+		<div class="row">
+			<span class="text">{{ recommendations[1] }}</span>
+			<span class="button-container">
+				<a href="https://www.youtube.com/results?search_query={{ R[1] }}+ trailer"><button class="button">Trailer</button></a>
+				<a href="https://www.imdb.com/find/?q={{ moreInfo[1] }}"><button class="button">More Info</button></a>
+			</span>
+		</div>
+		<div class="row">
+			<span class="text">{{ recommendations[2] }}</span>
+			<span class="button-container">
+				<a href="https://www.youtube.com/results?search_query={{ R[2] }}+ trailer"><button class="button">Trailer</button></a>
+				<a href="https://www.imdb.com/find/?q={{ moreInfo[2] }}"><button class="button">More Info</button></a>
+			</span>
+		</div>
+		<div class="row">
+			<span class="text">{{ recommendations[3] }}</span>
+			<span class="button-container">
+				<a href="https://www.youtube.com/results?search_query={{ R[3] }}+ trailer"><button class="button">Trailer</button></a>
+				<a href="https://www.imdb.com/find/?q={{ moreInfo[3] }}"><button class="button">More Info</button></a>
+			</span>
+		</div>
+		<div class="row">
+			<span class="text">{{ recommendations[4] }}</span>
+			<span class="button-container">
+				<a href="https://www.youtube.com/results?search_query={{ R[4] }}+ trailer"><button class="button">Trailer</button></a>
+				<a href="https://www.imdb.com/find/?q={{ moreInfo[4] }}"><button class="button">More Info</button></a>
+			</span>
+		</div>
+	</div>
+</body>
+</html>
